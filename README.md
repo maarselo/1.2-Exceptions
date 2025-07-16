@@ -42,10 +42,10 @@ To get a local copy of the project:
 
 ```bash
 # Clone this repository
-git clone https://github.com/maarselo/1.1-InheritancePolymorphism.git
+https://github.com/maarselo/1.2-Exceptions.git
 
 # Navigate into the project directory
-cd 1.1-InheritancePolymorphism
+cd 1.2-Exceptions/
 ```
 
 ### 📥 Cloning and Opening in IntelliJ IDEA
