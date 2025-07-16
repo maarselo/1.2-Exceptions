@@ -61,4 +61,35 @@ git clone https://github.com/maarselo/1.1-InheritancePolymorphism.git
 
  if you already have it cloned, click on `Open` and select the local copy to open it. 
 
+## ▶️ Running the Project
 
+To run the program:
+
+- Open the class that contains the `main()` method.
+- Click the green **Run** button in IntelliJ IDEA, or press **Shift + F10**.
+- If IntelliJ prompts you to sync or import dependencies, confirm the action.
+
+Each exercise (level) can be executed independently by running its corresponding main class.  
+For example, Level 3 launches an interactive menu that simulates a movie theater reservation system.
+
+## 🌐 Deployment
+
+This project is intended to run in a **local development environment** only.  
+No production deployment configuration has been defined.
+
+In the future, it could be extended into a GUI or web-based application for a better user experience.
+
+## 🤝 Contributions
+
+Contributions are welcome! If you’d like to collaborate:
+
+1. Fork this repository.
+2. Create a new branch:  
+ `git checkout -b feature/YourFeatureName`
+3. Make your changes and commit them:  
+ `git commit -m "Add: Your meaningful commit message"`
+4. Push your branch to your fork:  
+ `git push origin feature/YourFeatureName`
+5. Open a pull request with a clear description of your changes.
+
+Thanks for your interest and support! 🚀
