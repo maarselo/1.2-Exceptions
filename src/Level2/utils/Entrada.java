@@ -16,7 +16,7 @@ public class Entrada {
                 number = keyboard.nextByte();
                 keyboard.nextLine();break;
             } catch (InputMismatchException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Invalid Input.");
                 keyboard.nextLine();
             }
         }
@@ -30,7 +30,7 @@ public class Entrada {
                 number = keyboard.nextInt();
                 keyboard.nextLine(); break;
             } catch (InputMismatchException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Invalid Input.");
                 keyboard.nextLine();
             }
         }
@@ -44,7 +44,7 @@ public class Entrada {
                 number = keyboard.nextFloat();
                 keyboard.nextLine(); break;
             } catch (InputMismatchException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Invalid Input.");
                 keyboard.nextLine();
             }
         }
@@ -58,7 +58,7 @@ public class Entrada {
                 number = keyboard.nextDouble();
                 keyboard.nextLine(); break;
             } catch (InputMismatchException e ) {
-                System.out.println(e.getMessage());
+                System.out.println("Invalid Input.");
                 keyboard.nextLine();
             }
         }
@@ -71,10 +71,11 @@ public class Entrada {
         while (true) {
             try {
                 System.out.println(message);
-                c = keyboard.nextLine().charAt(0);
-                Utils.checkChar(c);
+                String input = keyboard.nextLine();
+                Utils.checkChar(input);
+                c = input.charAt(0);
                 break;
-            } catch (InputHaveMetaChars e) {
+            } catch (InputHaveMetaChars | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -101,18 +102,13 @@ public class Entrada {
         while (true) {
             try {
                 System.out.println(message);
-                input = keyboard.nextLine();
+                input = keyboard.nextLine().trim().toLowerCase();
                 Utils.checkInputIfIsEmpty(input);
                 Utils.checkStringResponse(input);
-                if (input.equals("s"))
-                    return (true);
-                else
-                    return (false);
-            } catch (InputErrorResponse | InputEmpty e) {
+                return (input.equals("s"));
+            } catch (InputErrorResponse | InputEmpty | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }
     }
-
-
 }

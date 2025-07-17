@@ -1,17 +1,12 @@
 package Level3.services;
 
-import Level2.view.TextMenu;
 import Level3.exceptions.AnyReservatios;
-import Level3.exceptions.EmptyString;
 import Level3.exceptions.ExceptionSeatOccupied;
-import Level3.exceptions.OutOfRange;
 import Level3.model.Cinema;
 import Level3.model.Seat;
 import Level3.utils.Input;
 
-import java.util.InputMismatchException;
 import java.util.Iterator;
-import java.util.Scanner;
 
 public class ManageCinema {
     private Cinema cinema;

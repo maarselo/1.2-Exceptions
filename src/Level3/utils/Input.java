@@ -1,11 +1,10 @@
 package Level3.utils;
 
-import Level2.view.TextMenu;
+import Level3.view.TextMenu;
 import Level3.exceptions.EmptyString;
 import Level3.exceptions.ExceptionIncorrectName;
 import Level3.exceptions.OutOfRange;
 
-import java.io.PrintStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -29,7 +28,6 @@ public class Input {
             try  {
                 System.out.println(message);
                 int number = keyboard.nextInt();
-                keyboard.nextLine();
                 checkRanges(number, max);
                 return (number);
             } catch (InputMismatchException | OutOfRange e) {
