@@ -3,9 +3,8 @@ package Level2.utils;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 import Level2.exceptions.*;
-import Level2.utils.*;
 
-public class Entrada {
+public class Input {
     private static Scanner keyboard = new Scanner(System.in);
 
     public static byte readByte(String message) {

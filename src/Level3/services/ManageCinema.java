@@ -55,13 +55,13 @@ public class ManageCinema {
     public void deleteReservePerson() {
         boolean signal = false;
         String name = Input.readstring("What ir your name:");
-        Iterator<Seat> iterator = this.cinema.getManageSeats().getSeats().iterator(); // Obtén un Iterator
+        Iterator<Seat> iterator = this.cinema.getManageSeats().getSeats().iterator();
 
-        while (iterator.hasNext()) {  // Itera con while
-            Seat s = iterator.next(); // Obtén el siguiente elemento
+        while (iterator.hasNext()) {
+            Seat s = iterator.next();
             if (s.getPerson().equals(name)) {
                 System.out.println("Deleting->" + s.toString());
-                iterator.remove(); // Elimina el elemento actual de forma segura
+                iterator.remove();
                 signal = true;
             }
         }

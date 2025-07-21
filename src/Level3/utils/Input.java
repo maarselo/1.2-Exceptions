@@ -54,7 +54,6 @@ public class Input {
     public static void checkRanges(int number, int max) throws OutOfRange {
         if (0 >= number || number > max)
             throw new OutOfRange("Number cannot be more than the max, and less than the min");
-        return;
     }
 
     public static void checkString(String input) throws EmptyString, ExceptionIncorrectName {
