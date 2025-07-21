@@ -54,7 +54,7 @@ cd 1.2-Exceptions/
 2. On the welcome screen, click **"Clone Repository"** (Get from Version Control).
 3. Paste the following URL into the **URL** field:
 ```bash
-git clone https://github.com/maarselo/1.1-InheritancePolymorphism.git
+git clone https://github.com/maarselo/1.2-Exceptions.git
 ```
 4. Choose the folder where the project should be saved.
 5. Click **Clone**.
