@@ -1,8 +1,8 @@
 ### IntelliJ IDEA ###
 
 #Custom ignores
-.idea
-.iml
+*.idea
+*.iml
 
 out/
 !**/src/main/**/out/
