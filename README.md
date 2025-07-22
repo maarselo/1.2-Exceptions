@@ -7,17 +7,17 @@ This project demonstrates how to work with built-in and custom exceptions to bui
 This repository contains the full solution for **Sprint 1 - Exceptions** of the Java programming track.  
 The sprint is divided into three levels, each focusing on more advanced exception management techniques:
 
-### 💥 Level 1  
+## 💥 Level 1  
 - Implements a `Product` and `Sale` class to simulate a sales system.  
 - Introduces a custom exception `SaleEmptyException` that is thrown if an attempt is made to calculate a sale with no products.  
 - Demonstrates the use and handling of built-in exceptions like `IndexOutOfBoundsException`.
 
-### 🎯 Level 2  
+## 🎯 Level 2  
 - Provides a utility class `Ticket` with static methods to safely read user input from the console using `Scanner`.  
 - Implements error handling with `InputMismatchException` and custom exceptions for invalid character, string, or yes/no input.  
 - Ensures the program continuously asks for input until valid data is entered.
 
-### 🎟️ Level 3  
+## 🎟️ Level 3  
 - Simulates a movie theater seat reservation system.  
 - Models domain classes such as `Seat`, `Cinema`, `ManageSeats`, and `ManageCinema`.  
 - Uses custom exceptions like `IncorrectPersonNameException`, `IncorrectRowException`, `IncorrectSittingException`, `OccupiedSeatException`, and `OpenSeatException` to enforce data integrity.  
@@ -54,7 +54,7 @@ cd 1.2-Exceptions/
 2. On the welcome screen, click **"Clone Repository"** (Get from Version Control).
 3. Paste the following URL into the **URL** field:
 ```bash
-git clone https://github.com/maarselo/1.1-InheritancePolymorphism.git
+git clone https://github.com/maarselo/1.2-Exceptions.git
 ```
 4. Choose the folder where the project should be saved.
 5. Click **Clone**.
