@@ -22,37 +22,6 @@ public class Cinema {
         this.seatsPerRow = Input.readInt("How many seats does a row have (max.50/min.1): ", 50);
     }
 
-    public void start(){
-        int option = 1;
-        do {
-            option = Input.showMenu();
-            try {
-                switch (option) {
-                    case 1 -> manageCinema.showSeats();
-                    case 2 -> manageCinema.showSeatsPerson();
-                    case 3 -> manageCinema.reserveSeat();
-                    case 4 -> manageCinema.deleteReserve();
-                    case 5 -> manageCinema.deleteReservePerson();
-                    case 0 -> {
-                        System.out.print("Saliendo");
-                        for (int i = 0;  i < 3; i++) {
-                            try {
-                                Thread.sleep(2000);
-                            }catch (InterruptedException e) {
-                                Thread.currentThread().interrupt();
-                            }
-                            System.out.print(".");
-                        }
-                        System.out.println();
-                        return ;
-                    }
-                }
-            } catch (RuntimeException e) {
-                System.out.println(e.getMessage());
-            }
-        } while (true);
-    }
-
     public int getRows() {return rows;}
     public int getSeatsPerRow() {return seatsPerRow;}
     public ManageSeats getManageSeats() {return manageSeats;}

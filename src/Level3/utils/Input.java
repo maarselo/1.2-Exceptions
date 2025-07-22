@@ -1,9 +1,9 @@
 package Level3.utils;
 
 import Level3.view.TextMenu;
-import Level3.exceptions.EmptyString;
-import Level3.exceptions.ExceptionIncorrectName;
-import Level3.exceptions.OutOfRange;
+import Level3.exceptions.EmptyStringException;
+import Level3.exceptions.IncorrectNameException;
+import Level3.exceptions.OutOfRangeException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -30,7 +30,7 @@ public class Input {
                 int number = keyboard.nextInt();
                 checkRanges(number, max);
                 return (number);
-            } catch (InputMismatchException | OutOfRange e) {
+            } catch (InputMismatchException | OutOfRangeException e) {
                 keyboard.nextLine();
                 System.out.println(e.getMessage());
             }
@@ -45,24 +45,24 @@ public class Input {
                 input = keyboard.nextLine();
                 checkString(input);
                 return (input) ;
-            } catch (EmptyString | ExceptionIncorrectName e) {
+            } catch (EmptyStringException | IncorrectNameException e) {
                 System.out.println(e.getMessage());
             }
         }
     }
 
-    public static void checkRanges(int number, int max) throws OutOfRange {
+    public static void checkRanges(int number, int max) throws OutOfRangeException {
         if (0 >= number || number > max)
-            throw new OutOfRange("Number cannot be more than the max, and less than the min");
+            throw new OutOfRangeException("Number cannot be more than the max, and less than the min");
     }
 
-    public static void checkString(String input) throws EmptyString, ExceptionIncorrectName {
+    public static void checkString(String input) throws EmptyStringException, IncorrectNameException {
         if (input.isEmpty())
-            throw new EmptyString("The string cannot be empty.");
+            throw new EmptyStringException("The string cannot be empty.");
         String digits = "0123456789";
         for (char d : digits.toCharArray()) {
             if (input.indexOf(d) != -1)
-                throw new ExceptionIncorrectName("The name cannot contains numbers.");
+                throw new IncorrectNameException("The name cannot contains numbers.");
         }
     }
 }

@@ -71,10 +71,10 @@ public class Input {
             try {
                 System.out.println(message);
                 String input = keyboard.nextLine();
-                Utils.checkChar(input);
+                Checker.checkChar(input);
                 c = input.charAt(0);
                 break;
-            } catch (InputHaveMetaChars | IllegalArgumentException e) {
+            } catch (InputHaveMetaCharsException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -86,10 +86,10 @@ public class Input {
             try {
                 System.out.println(message);
                 input = keyboard.nextLine();
-                Utils.checkInputIfIsEmpty(input);
-                Utils.checkStringDigits(input);
+                Checker.checkInputIfIsEmpty(input);
+                Checker.checkStringDigits(input);
                 break;
-            } catch (InputHaveDigits | InputEmpty e) {
+            } catch (InputHaveDigitsException | InputEmptyException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -102,10 +102,10 @@ public class Input {
             try {
                 System.out.println(message);
                 input = keyboard.nextLine().trim().toLowerCase();
-                Utils.checkInputIfIsEmpty(input);
-                Utils.checkStringResponse(input);
+                Checker.checkInputIfIsEmpty(input);
+                Checker.checkStringResponse(input);
                 return (input.equals("s"));
-            } catch (InputErrorResponse | InputEmpty | IllegalArgumentException e) {
+            } catch (InputErrorResponseException | InputEmptyException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }

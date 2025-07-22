@@ -1,12 +1,14 @@
 package Level3.services;
 
-import Level3.exceptions.AnyReservatios;
-import Level3.exceptions.ExceptionSeatOccupied;
+import Level3.exceptions.AnyReservationsException;
+import Level3.exceptions.SeatOccupiedException;
 import Level3.model.Cinema;
 import Level3.model.Seat;
 import Level3.utils.Input;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class ManageCinema {
     private Cinema cinema;
@@ -15,9 +17,9 @@ public class ManageCinema {
         this.cinema = cinema;
     }
 
-    public void showSeats() throws AnyReservatios {
+    public void showSeats() throws AnyReservationsException {
         if (this.cinema.getManageSeats().getSeats().isEmpty())
-            throw new AnyReservatios("The cinema doesn't have any reserves");
+            throw new AnyReservationsException("The cinema doesn't have any reserves");
         for (Seat s : this.cinema.getManageSeats().getSeats())
             System.out.println(s.toString());
     }
@@ -25,14 +27,23 @@ public class ManageCinema {
     public void showSeatsPerson () {
         int signal = 0;
         String person = Input.readstring("Put the name of the person: ");
+        List<Seat> seats = findSeatsByPerson(person);
+        if (seats.isEmpty()) {
+            System.out.println("This persona doesn't have any booking.");
+            return;
+        }
+        for (Seat s : seats)
+            System.out.println(s.toString());
+    }
+
+    public List<Seat> findSeatsByPerson(String personName) {
+        List<Seat> result = new ArrayList<>();
         for (Seat s : this.cinema.getManageSeats().getSeats()) {
-            if (s.getPerson().equals(person)) {
-                signal = 1;
-                System.out.println(s.toString());
+            if (s.getPerson().equals(personName)) {
+                result.add(s);
             }
         }
-        if (signal == 0)
-            System.out.println("This persona doesn't have any booking.");
+        return result;
     }
 
     public void reserveSeat() {
@@ -47,7 +58,7 @@ public class ManageCinema {
         int seat = Input.readInt("Choose a row(max." + cinema.getSeatsPerRow() + "/min.1): ", cinema.getSeatsPerRow());
         try {
             cinema.getManageSeats().deleteSeat(row, seat);
-        } catch (ExceptionSeatOccupied e) {
+        } catch (SeatOccupiedException e) {
             System.out.println(e.getMessage());
         }
     }

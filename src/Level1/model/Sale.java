@@ -5,11 +5,10 @@ import Level1.exception.VoidSaleException;
 import java.util.ArrayList;
 
 public class Sale {
-    private ArrayList<Product> products = null;
+    private ArrayList<Product> products = new ArrayList<>();
     private double totalPrice;
 
     public Sale() {
-        this.products = new ArrayList<>();
         totalPrice = 0;
     }
 
